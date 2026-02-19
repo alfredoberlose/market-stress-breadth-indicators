@@ -13,19 +13,19 @@ The tool implements three specific filters to identify "significant daily drops"
 - **Logic**: Counts stocks recording a daily return of -7.0% or lower.
 - **Context**: Represents a "brute force" panic indicator. It is highly effective during high-volatility crashes (e.g., 2008, 2020).
 
-![Fixed Threshold Chart](images/method1.png)
+![Fixed Threshold Chart](method1.png)
 
 ### 2. Volatility-Adjusted Method (Standard Deviation)
 - **Logic**: Identifies drops exceeding 3x the 20-day rolling standard deviation of each individual stock.
 - **Context**: Normalizes for the different "personalities" of stocks, detecting stress in low-beta sectors that a fixed threshold would miss.
 
-![Standard Deviation Chart](images/method2.png)
+![Standard Deviation Chart](method2.png)
 
 ### 3. Absolute Volatility Method (Average True Range)
 - **Logic**: Identifies drops where the price decline exceeds 3x the 14-day Average True Range (ATR).
 - **Context**: Accounts for absolute price excursions and overnight gaps, offering a cleaner view of liquidity-driven stress.
 
-![ATR Method Chart](images/method3.png)
+![ATR Method Chart](method3.png)
 
 ## Data Pipeline and Processing
 - **Universe**: S&P 500 constituents (dynamically fetched from Wikipedia).
